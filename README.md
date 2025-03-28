@@ -33,6 +33,7 @@ poetry install
 
 ## Outline
 #### Jupyter Notebooks (for data exploration & analysis)
+**Use it by running:**
 ```bash
 jupyter notebook
 ```
@@ -57,7 +58,7 @@ jupyter notebook
 ##### `qgis_layout_export.py`
 - Custom QGIS layout automation script to be used in the QGIS Python Console
 
-💡 **Use it by:**
+**Use it by:**
 1. Styling all of your GeoTiffs in your layers panel in QGIS.
 2. Creating a map layout.
 3. Running the script via QGIS Python Console.
@@ -70,7 +71,7 @@ jupyter notebook
 - Designed to work with all PNG layers in a directory, exported from QGIS.
 - Reads the file names and places text objects at a fixed position.
 
-💡 **Use it by:**
+**Use it by:**
 1. Creating an Illustrator Layout with a textbox that says your month and day, ex. "MARCH 01"
 2. Adding your map PNG as a linked image to your Illustrator layout.
 3. Editing file paths/variables to match your paths in the JavaScript script
