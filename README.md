@@ -13,18 +13,25 @@ This repo contains:
 ## Installation
 
 ### Create environment from environment.yml
+
+```bash
 conda env create -f environment.yml
+```
 
 ### Activate the environment
+```bash
 conda activate py3.10
+```
 
 ### Install dependencies with poetry
+```bash
 poetry install
+```
 
 
 ## 📚 Notebooks (for exploration & analysis)
 
-> Open these using [JupyterLab](https://jupyter.org/) or [VS Code with Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
+Open these using [JupyterLab](https://jupyter.org/) or [VS Code with Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
 
 #### `01_create_latitude_blocks.ipynb`
 - Creates global **latitude band polygons** from the Equator to the North Pole.
