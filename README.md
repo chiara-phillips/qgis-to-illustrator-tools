@@ -10,6 +10,8 @@ Inside, there are:
 - 1 Python script for use in **QGIS**
 - 1 JavaScript script for use in **Illustrator**
 
+---
+
 ## Installation
 
 ### Create environment from environment.yml
@@ -27,31 +29,32 @@ conda activate py3.10
 ```bash
 poetry install
 ```
+---
 
-
-## Jupyter Notebooks (for data exploration & analysis)
+## Outline
+#### Jupyter Notebooks (for data exploration & analysis)
 ```bash
 jupyter notebook
 ```
-#### `01_create_latitude_blocks.ipynb`
+##### `01_create_latitude_blocks.ipynb`
 - Creates global 10 degree **latitude band polygons** from the Equator to the North Pole.
 - Saves them as a vector file for clipping or spatial joins.
 - Displays map of the latitude bands.
 
-#### `02_clip_ocean_by_latitude.ipynb`
+##### `02_clip_ocean_by_latitude.ipynb`
 - Loads the **North Atlantic Ocean** polygon from a GOaS vector file.
 - Clips it using the latitude bands.
 - Creates a time-series chart of daily chlorophyll-a values
 
-#### `03_netcdf_to_rasters.ipynb`
+##### `03_netcdf_to_rasters.ipynb`
 - Loads a chlorophyll-a NetCDF dataset using `xarray`.
 - Extracts each daily **time step** as a **GeoTIFF raster**.
 - Output rasters go to: `data/rasters/`
 
 
-## Python Script (for QGIS export)
+### Python Script (for QGIS export)
 
-#### `qgis_layout_export.py`
+##### `qgis_layout_export.py`
 - Custom QGIS layout automation script to be used in the QGIS Python Console
 
 💡 **Use it by:**
@@ -60,9 +63,9 @@ jupyter notebook
 3. Running the script via QGIS Python Console.
 
 
-## JavaScript script (for Illustrator export)
+### JavaScript script (for Illustrator export)
 
-#### `illustrator_relink_and_export.js`
+##### `illustrator_relink_and_export.js`
 - Adds **text labels** for each latitude band directly in Illustrator based on file name.
 - Designed to work with all PNG layers in a directory, exported from QGIS.
 - Reads the file names and places text objects at a fixed position.
@@ -73,14 +76,19 @@ jupyter notebook
 3. Editing file paths/variables to match your paths in the JavaScript script
 4. Running the script via **File > Scripts > Other Script...**
 
+---
+
 ## CHANGELOG
 
 - 0.1.0 - Initial Release
+
+---
 
 ## License
 
 This project is licensed under the MIT License. See LICENSE for details.
 
+---
 
 ## Contact
 
