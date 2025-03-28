@@ -5,7 +5,7 @@
 This repository contains a collection of scripts used in the [North Atlantic Phytoplankton Bloom map](https://www.chiaraphillips.com/maps/phytoplankton-bloom) designed by Chiara Phillips for the E.U. Copernicus Marine Service and Mercator Ocean as part of the [Data Viz Webinar Series](https://youtu.be/Ie22d4oVOPA?t=3377).
 These tools help with isolating the time periods needed to map the North Atlantic Phytoplankton Bloom, converting NetCDF files to raster formats, and automating the export of map layouts from QGIS and Illustrator.
 
-This repo contains:
+Inside, there are:
 - 3 step-by-step Jupyter notebooks for spatial and temporal analysis
 - 1 Python script for use in **QGIS**
 - 1 JavaScript script for use in **Illustrator**
@@ -29,7 +29,7 @@ poetry install
 ```
 
 
-## 📚 Run Jupyter Notebooks for data exploration & analysis
+## Run Jupyter Notebooks for data exploration & analysis
 ```bash
 jupyter notebook
 ```
@@ -48,7 +48,7 @@ jupyter notebook
 - Output rasters go to: `data/rasters/`
 
 
-## 🐍 Python Script (for QGIS)
+## Python Script (for QGIS)
 
 #### `qgis_layout_export.py`
 - Custom QGIS layout automation script to be used in the QGIS Python Console
@@ -59,7 +59,7 @@ jupyter notebook
 3. Running the script via QGIS Python Console.
 
 
-## ✒️ Illustrator Script (JavaScript)
+## JavaScript script (for Illustrator)
 
 #### `illustrator_relink_and_export.js`
 - Adds **text labels** for each latitude band directly in Illustrator based on file name.
