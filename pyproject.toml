@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "qgis-to-illustrator-tools"
+version = "0.1.0"
+description = "Helper scripts for processing and exporting Copernicus Marine Service ocean data from QGIS to Illustrator."
+authors = ["Chiara Phillips <chiaraphillips.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "qgis_to_illustrator_tools" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dask = "^2025.3.0"
+geodatasets = "^2024.8.0"
+geopandas = "^1.0.1"
+loguru = "^0.7.2"
+matplotlib = "^3.8.0"
+numpy = "^2.2.0"
+pandas = "^2.2.0"
+rasterio = "^1.4.0"
+rioxarray = "^0.18.2"
+shapely = "^2.0.0"
+tqdm = "^4.67.1"
+xarray = "^2025.3.0"
+pyproj = "^3.7.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
