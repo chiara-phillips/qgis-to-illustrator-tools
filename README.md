@@ -29,18 +29,19 @@ poetry install
 ```
 
 
-## Run Jupyter Notebooks for data exploration & analysis
+## Jupyter Notebooks (for data exploration & analysis)
 ```bash
 jupyter notebook
 ```
 #### `01_create_latitude_blocks.ipynb`
-- Creates global **latitude band polygons** from the Equator to the North Pole.
+- Creates global 10 degree **latitude band polygons** from the Equator to the North Pole.
 - Saves them as a vector file for clipping or spatial joins.
+- Displays map of the latitude bands.
 
 #### `02_clip_ocean_by_latitude.ipynb`
 - Loads the **North Atlantic Ocean** polygon from a GOaS vector file.
 - Clips it using the latitude bands.
-- Result is a **zoned ocean file** for regional analysis.
+- Creates a time-series chart of daily chlorophyll-a values
 
 #### `03_netcdf_to_rasters.ipynb`
 - Loads a chlorophyll-a NetCDF dataset using `xarray`.
@@ -48,7 +49,7 @@ jupyter notebook
 - Output rasters go to: `data/rasters/`
 
 
-## Python Script (for QGIS)
+## Python Script (for QGIS export)
 
 #### `qgis_layout_export.py`
 - Custom QGIS layout automation script to be used in the QGIS Python Console
@@ -59,7 +60,7 @@ jupyter notebook
 3. Running the script via QGIS Python Console.
 
 
-## JavaScript script (for Illustrator)
+## JavaScript script (for Illustrator export)
 
 #### `illustrator_relink_and_export.js`
 - Adds **text labels** for each latitude band directly in Illustrator based on file name.
