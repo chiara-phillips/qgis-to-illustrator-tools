@@ -1,0 +1,20 @@
+name: py3.10
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - geopandas
+  - loguru
+  - numpy
+  - pandas
+  - rasterio
+  - xarray
+  - ipykernel
+  - jupyter
+  - matplotlib
+  - geodatasets
+  - dask
+  - h5netcdf
+  - netcdf4
+  - rioxarray
+  - tqdm
