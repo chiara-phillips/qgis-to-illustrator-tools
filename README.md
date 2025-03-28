@@ -29,10 +29,10 @@ poetry install
 ```
 
 
-## 📚 Notebooks (for exploration & analysis)
-
-Open these using [JupyterLab](https://jupyter.org/) or [VS Code with Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
-
+## 📚 Run Jupyter Notebooks for data exploration & analysis
+```bash
+jupyter notebook
+```
 #### `01_create_latitude_blocks.ipynb`
 - Creates global **latitude band polygons** from the Equator to the North Pole.
 - Saves them as a vector file for clipping or spatial joins.
