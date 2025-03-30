@@ -54,4 +54,4 @@ venv.bak/
 .pyre/
 
 # Custom: exclude data files from tracking
-qgis_to_illustrator_tools/python/data/
+qgis_to_illustrator_tools/python/notebooks/data/
