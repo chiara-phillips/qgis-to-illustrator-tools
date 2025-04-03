@@ -33,10 +33,14 @@ poetry install
 
 ## Outline
 #### Jupyter Notebooks (for data exploration & analysis)
-**Use it by running:**
+**Use it by:**
+1. Run:
 ```bash
 jupyter notebook
 ```
+
+2. Navigate to `python/notebooks`
+3. Open the following notebooks:
 ##### `00_cms_data_download.ipynb`
 - Downloads chlorophyll-a concentration Zarr data for the year 2024 from the Copernicus Marine Service platform
 
