@@ -3,10 +3,10 @@
 ## Overview
 
 This repository contains a collection of scripts used in the [North Atlantic Phytoplankton Bloom map](https://www.chiaraphillips.com/maps/phytoplankton-bloom) designed by Chiara Phillips for the E.U. Copernicus Marine Service and Mercator Ocean as part of the [Data Viz Webinar Series](https://youtu.be/Ie22d4oVOPA?t=3377).
-These tools help with isolating the time periods needed to map the North Atlantic Phytoplankton Bloom, converting NetCDF files to raster formats, and automating the export of map layouts from QGIS and Illustrator.
+These tools help with isolating the time periods needed to map the North Atlantic Phytoplankton Bloom, converting Zarr files to GeoTiff formats, and automating the export of map layouts from QGIS and Illustrator.
 
 Inside, there are:
-- 3 step-by-step Jupyter notebooks for spatial and temporal analysis
+- 4 step-by-step Jupyter notebooks for spatial and temporal analysis
 - 1 Python script for use in **QGIS**
 - 1 JavaScript script for use in **Illustrator**
 
@@ -37,21 +37,23 @@ poetry install
 ```bash
 jupyter notebook
 ```
+##### `00_cms_data_download.ipynb`
+- Downloads chlorophyll-a concentration Zarr data for the year 2024 from the Copernicus Marine Service platform
+
 ##### `01_create_latitude_blocks.ipynb`
 - Creates global 10 degree **latitude band polygons** from the Equator to the North Pole.
 - Saves them as a vector file for clipping or spatial joins.
 - Displays map of the latitude bands.
 
-##### `02_clip_ocean_by_latitude.ipynb`
+##### `02_zarr_by_latitude.ipynb`
 - Loads the **North Atlantic Ocean** polygon from a GOaS vector file.
-- Clips it using the latitude bands.
-- Creates a time-series chart of daily chlorophyll-a values
+- Creates a time-series chart of daily chlorophyll-a values within each latitude band of the North Atlantic
 
-##### `03_netcdf_to_rasters.ipynb`
-- Loads a chlorophyll-a NetCDF dataset using `xarray`.
+##### `03_zarr_to_geotiffs.ipynb`
+- Loads a chlorophyll-a Zarr dataset using `xarray`.
 - Extracts each daily **time step** as a **GeoTIFF raster**.
 - Output rasters go to: `data/rasters/`
-
+-
 
 ### Python Script (for QGIS export)
 
@@ -80,7 +82,7 @@ jupyter notebook
 ---
 
 ## CHANGELOG
-
+- 0.2.0 - Add CMS data download, switch from NetCDF to Zarr
 - 0.1.0 - Initial Release
 
 ---

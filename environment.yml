@@ -18,3 +18,5 @@ dependencies:
   - netcdf4
   - rioxarray
   - tqdm
+  - conda-forge::copernicusmarine
+prefix: /Users/chiara/miniconda3/envs/py3.10
