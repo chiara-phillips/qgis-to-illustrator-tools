@@ -1,7 +1,7 @@
 fail_fast: true
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v5.0.0
     hooks:
       - id: check-added-large-files
         name: "[file -  check] large file"
@@ -43,32 +43,30 @@ repos:
         args: [--markdown-linebreak-ext=md]
 
   - repo: https://github.com/PyCQA/isort
-    rev: 5.11.5
+    rev: 6.0.1
     hooks:
       - id: isort
         args: [--profile=black]
         name: "[py   - format] isort"
 
   - repo: https://github.com/PyCQA/docformatter
-    rev: v1.7.5
+    rev: v1.7.7
     hooks:
       - id: docformatter
         args: [--wrap-summaries=88, --wrap-descriptions=88, -i]
         name: "[py   - format] docformatter"
 
   - repo: https://github.com/ambv/black
-    rev: 22.6.0
+    rev: 25.1.0
     hooks:
       - id: black
         name: "[py   - format] black"
-        language_version: python3.9
 
   - repo: https://github.com/PyCQA/flake8
-    rev: 5.0.0
+    rev: 7.3.0
     hooks:
       - id: flake8
         name: "[py   -  check] flake8"
-        language_version: python3.9
 
   - repo: https://github.com/lovesegfault/beautysh
     rev: v6.2.1
@@ -77,7 +75,7 @@ repos:
         name: "[bash - format] beautysh"
 
   - repo: https://github.com/detailyang/pre-commit-shell
-    rev: v1.0.6
+    rev: 1.0.5
     hooks:
       - id: shell-lint
         name: "[bash -   lint] shell-lint"

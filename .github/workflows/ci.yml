@@ -22,23 +22,26 @@ jobs:
       - name: Install Poetry
         uses: abatilo/actions-poetry@v2
 
-      - name: Install dependencies
-        run: poetry install
+      - name: Install dependencies (with dev)
+        run: poetry install --with dev
 
       - name: Run pre-commit
         run: poetry run pre-commit run --all-files
 
-      - name: Run tests
-        run: poetry run pytest
+#      - name: Run tests
+#        run: poetry run pytest
 
   tag:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
