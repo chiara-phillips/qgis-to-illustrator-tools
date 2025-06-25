@@ -1,8 +1,8 @@
 #target illustrator
 
 // Define the folders
-var imageFolder = new Folder("/Users/chiara/personal_projects/qgis-to-illustrator-tools/qgis_to_illustrator_tools/qgis/styled_plankton_globes");
-var exportFolder = new Folder("/Users/chiara/personal_projects/qgis-to-illustrator-tools/qgis_to_illustrator_tools/illustrator/styled_plankton_globes_illustrator");
+var imageFolder = new Folder("/path_to_your_qgis_pngs");
+var exportFolder = new Folder("/path_to_your_desired_output_directory);
 var linkedFile = "cmems_mod_glo_bgc-pft_anfc_0.25deg_P1D-m_chl_180.00W-179.75E_80.00S-90.00N_0.49m_2024-03-01.png"
 var dateFrame = "MARCH 01"
 
