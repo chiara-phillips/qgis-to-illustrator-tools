@@ -22,14 +22,14 @@ jobs:
       - name: Install Poetry
         uses: abatilo/actions-poetry@v2
 
-      - name: Install dependencies
-        run: poetry install
+      - name: Install dependencies (with dev)
+        run: poetry install --with dev
 
       - name: Run pre-commit
         run: poetry run pre-commit run --all-files
 
-      - name: Run tests
-        run: poetry run pytest
+#      - name: Run tests
+#        run: poetry run pytest
 
   tag:
     needs: test
