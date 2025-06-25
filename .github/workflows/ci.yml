@@ -31,12 +31,6 @@ jobs:
 #      - name: Run tests
 #        run: poetry run pytest
 
-# Install pre-commit hooks (runs on commit)
-poetry run pre-commit install
-
-# Install pre-push hooks (runs before push)
-poetry run pre-commit install --hook-type pre-push
-
   tag:
     needs: test
     runs-on: ubuntu-latest
