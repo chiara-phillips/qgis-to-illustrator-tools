@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "qgis-to-illustrator-tools"
-version = "0.2.0"
-description = "Helper scripts for processing and exporting Copernicus Marine Service ocean data from QGIS to Illustrator."
+version = "0.3.0"
+description = "Helper scripts for processing and exporting CMS data."
 authors = ["Chiara Phillips <chiaraphillips.com>"]
 license = "MIT"
 readme = "README.md"
