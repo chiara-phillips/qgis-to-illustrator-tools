@@ -86,6 +86,7 @@ jupyter notebook
 ---
 
 ## CHANGELOG
+- 0.3.0 - Add color ramp text file, use file and date variables in Illustrator export
 - 0.2.0 - Add CMS data download, switch from NetCDF to Zarr
 - 0.1.0 - Initial Release
 

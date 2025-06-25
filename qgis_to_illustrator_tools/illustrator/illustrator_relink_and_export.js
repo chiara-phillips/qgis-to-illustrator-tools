@@ -3,6 +3,8 @@
 // Define the folders
 var imageFolder = new Folder("/path_to_your_qgis_pngs");
 var exportFolder = new Folder("/path_to_your_desired_output_directory);
+var linkedFile = "cmems_mod_glo_bgc-pft_anfc_0.25deg_P1D-m_chl_180.00W-179.75E_80.00S-90.00N_0.49m_2024-03-01.png"
+var dateFrame = "MARCH 01"
 
 // Ensure folders exist
 if (!imageFolder.exists) {
@@ -23,7 +25,7 @@ var doc = app.activeDocument;
 var linkedItem = null;
 for (var i = 0; i < doc.placedItems.length; i++) {
     if (doc.placedItems[i].file) {
-        if (doc.placedItems[i].file.name === "chl_2024-03-01.png") { // Match the existing linked filename
+        if (doc.placedItems[i].file.name === linkedFile) { // Match the existing linked filename
             linkedItem = doc.placedItems[i];
             break;
         }
@@ -32,14 +34,14 @@ for (var i = 0; i < doc.placedItems.length; i++) {
 
 // If no linked image is found, exit
 if (!linkedItem) {
-    alert("No linked image found matching 'chl_2024-03-01.png'.");
+    alert("No linked image found matching ${linkedFile}.");
     exit();
 }
 
 // Find the text frame to update
 var textFrame = null;
 for (var i = 0; i < doc.textFrames.length; i++) {
-    if (doc.textFrames[i].contents === "MARCH 01") { // Change this to match the placeholder format in Illustrator
+    if (doc.textFrames[i].contents === dateFrame) { // Change this to match the placeholder format in Illustrator
         textFrame = doc.textFrames[i];
         break;
     }
@@ -47,7 +49,7 @@ for (var i = 0; i < doc.textFrames.length; i++) {
 
 // If no text frame is found, exit
 if (!textFrame) {
-    alert("Text frame with placeholder 'MARCH 01' not found.");
+    alert("No text frame placeholder matching ${dateFrame}.");
     exit();
 }
 
@@ -71,7 +73,7 @@ var artboardBounds = doc.artboards[doc.artboards.getActiveArtboardIndex()].artbo
 for (var j = 0; j < imageFiles.length; j++) {
     var newImageFile = new File(imageFiles[j]);
 
-    // Extract the month and day from the filename (assuming format: chl_YYYY-MM-DD.png)
+    // Extract the month and day from the filename
     var match = newImageFile.name.match(/(\d{4})-(\d{2})-(\d{2})/);
     if (match) {
         var monthNum = match[2]; // Extract month
@@ -108,4 +110,4 @@ for (var j = 0; j < imageFiles.length; j++) {
     }
 }
 
-alert("Batch relink, text update & export complete!");
+alert("Batch export complete!");

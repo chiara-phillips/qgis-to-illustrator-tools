@@ -1,0 +1,7 @@
+Plankton color ramp
+#11052c
+#1d325e
+#008ae5
+#3dde83
+#93e9ae
+#dcdcdc
