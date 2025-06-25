@@ -61,14 +61,12 @@ repos:
     hooks:
       - id: black
         name: "[py   - format] black"
-        language_version: python3.9
 
   - repo: https://github.com/PyCQA/flake8
     rev: 7.3.0
     hooks:
       - id: flake8
         name: "[py   -  check] flake8"
-        language_version: python3.9
 
   - repo: https://github.com/lovesegfault/beautysh
     rev: v6.2.1
