@@ -31,6 +31,12 @@ jobs:
 #      - name: Run tests
 #        run: poetry run pytest
 
+# Install pre-commit hooks (runs on commit)
+poetry run pre-commit install
+
+# Install pre-push hooks (runs before push)
+poetry run pre-commit install --hook-type pre-push
+
   tag:
     needs: test
     runs-on: ubuntu-latest
@@ -61,7 +67,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
+
           # Check if tag already exists
           if git rev-parse "${{ steps.get_version.outputs.version }}" >/dev/null 2>&1; then
             echo "Tag ${{ steps.get_version.outputs.version }} already exists, skipping tag creation"
