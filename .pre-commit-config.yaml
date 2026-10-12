@@ -42,31 +42,14 @@ repos:
         name: "[file - format] trim trailing whitespace"
         args: [--markdown-linebreak-ext=md]
 
-  - repo: https://github.com/PyCQA/isort
-    rev: 6.0.1
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.0
     hooks:
-      - id: isort
-        args: [--profile=black]
-        name: "[py   - format] isort"
-
-  - repo: https://github.com/PyCQA/docformatter
-    rev: v1.7.7
-    hooks:
-      - id: docformatter
-        args: [--wrap-summaries=88, --wrap-descriptions=88, -i]
-        name: "[py   - format] docformatter"
-
-  - repo: https://github.com/ambv/black
-    rev: 25.1.0
-    hooks:
-      - id: black
-        name: "[py   - format] black"
-
-  - repo: https://github.com/PyCQA/flake8
-    rev: 7.3.0
-    hooks:
-      - id: flake8
-        name: "[py   -  check] flake8"
+      - id: ruff
+        name: "[py   -  check] ruff"
+        args: [--fix]
+      - id: ruff-format
+        name: "[py   - format] ruff"
 
   - repo: https://github.com/lovesegfault/beautysh
     rev: v6.2.1

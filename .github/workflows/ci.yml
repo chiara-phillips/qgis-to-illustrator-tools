@@ -14,22 +14,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
         with:
+          enable-cache: true
           python-version: "3.10"
 
-      - name: Install Poetry
-        uses: abatilo/actions-poetry@v2
-
-      - name: Install dependencies (with dev)
-        run: poetry install --with dev
+      - name: Install dependencies
+        run: uv sync --locked --all-groups
 
       - name: Run pre-commit
-        run: poetry run pre-commit run --all-files
+        run: uv run pre-commit run --all-files
 
 #      - name: Run tests
-#        run: poetry run pytest
+#        run: uv run pytest
 
   tag:
     needs: test
@@ -43,19 +41,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-
-      - name: Install Poetry
-        uses: abatilo/actions-poetry@v2
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
 
       - name: Get version from pyproject.toml
         id: get_version
-        run: |
-          VERSION=$(poetry version -s)
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+        run: echo "version=$(uv version --short)" >> "$GITHUB_OUTPUT"
 
       - name: Create tag
         run: |
