@@ -14,20 +14,9 @@ Inside, there are:
 
 ## Installation
 
-### Create environment from environment.yml
-
+### Install dependencies with uv
 ```bash
-conda env create -f environment.yml
-```
-
-### Activate the environment
-```bash
-conda activate py3.10
-```
-
-### Install dependencies with poetry
-```bash
-poetry install
+uv sync --all-groups
 ```
 ---
 
@@ -36,7 +25,7 @@ poetry install
 **Use it by:**
 1. Run:
 ```bash
-jupyter notebook
+uv run jupyter notebook
 ```
 
 2. Navigate to `python/notebooks`
@@ -86,6 +75,7 @@ jupyter notebook
 ---
 
 ## CHANGELOG
+- 0.4.0 - Switch to uv for dependency management
 - 0.3.0 - Add color ramp text file, use file and date variables in Illustrator export
 - 0.2.0 - Add CMS data download, switch from NetCDF to Zarr
 - 0.1.0 - Initial Release
