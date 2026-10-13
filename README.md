@@ -75,6 +75,7 @@ uv run jupyter notebook
 ---
 
 ## CHANGELOG
+- 0.5.0 - Add bandit to pre-commit hooks
 - 0.4.0 - Switch to uv for dependency management
 - 0.3.0 - Add color ramp text file, use file and date variables in Illustrator export
 - 0.2.0 - Add CMS data download, switch from NetCDF to Zarr
