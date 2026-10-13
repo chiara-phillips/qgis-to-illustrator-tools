@@ -1,6 +1,6 @@
 [project]
 name = "qgis-to-illustrator-tools"
-version = "0.3.0"
+version = "0.5.0"
 description = "Helper scripts for processing and exporting CMS data."
 authors = [{ name = "Chiara Phillips" }]
 license = "MIT"

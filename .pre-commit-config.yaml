@@ -51,6 +51,12 @@ repos:
       - id: ruff-format
         name: "[py   - format] ruff"
 
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.9.4
+    hooks:
+      - id: bandit
+        name: "[py   -  check] bandit"
+
   - repo: https://github.com/lovesegfault/beautysh
     rev: v6.2.1
     hooks:
