@@ -75,6 +75,7 @@ uv run jupyter notebook
 ---
 
 ## CHANGELOG
+- 0.5.1 - Regenerate lockfile to fix CI dependency installation
 - 0.5.0 - Add bandit to pre-commit hooks
 - 0.4.0 - Switch to uv for dependency management
 - 0.3.0 - Add color ramp text file, use file and date variables in Illustrator export
